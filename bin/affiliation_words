@@ -1,0 +1,5 @@
+$LOAD_PATH.unshift File.join(__dir__, '..', 'lib')
+
+require 'affiliation_words_query'
+
+AffiliationWordsQuery.run if __FILE__ == $PROGRAM_NAME

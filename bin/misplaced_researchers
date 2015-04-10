@@ -1,0 +1,5 @@
+$LOAD_PATH.unshift File.join(__dir__, '..', 'lib')
+
+require 'misplaced_researchers_query'
+
+MisplacedResearchersQuery.run if __FILE__ == $PROGRAM_NAME
