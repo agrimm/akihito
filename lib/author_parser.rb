@@ -16,13 +16,22 @@ class AuthorParser
     author_name_nodes.map(&method(:create_author))
   end
 
-  SURNAME_XPATH = 'surname'
-  GIVEN_NAMES_XPATH = 'given-names'
   def create_author(author_name_node)
-    surname_node = author_name_node.at_xpath(SURNAME_XPATH)
-    surname = surname_node.content
-    given_names_node = author_name_node.at_xpath(GIVEN_NAMES_XPATH)
-    given_names = given_names_node.nil? ? '' : given_names_node.content
+    surname = determine_surname(author_name_node)
+    given_names = determine_given_names(author_name_node)
     Author.new(surname, given_names)
+  end
+
+  SURNAME_XPATH = 'surname'
+  def determine_surname(author_name_node)
+    surname_node = author_name_node.at_xpath(SURNAME_XPATH)
+    surname_node.content
+  end
+
+  GIVEN_NAMES_XPATH = 'given-names'
+  def determine_given_names(author_name_node)
+    # People can have no given names, with no warning of that information.
+    given_names_node = author_name_node.at_xpath(GIVEN_NAMES_XPATH)
+    given_names_node.nil? ? '' : given_names_node.content
   end
 end
