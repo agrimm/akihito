@@ -25,7 +25,12 @@ class AuthorParser
   SURNAME_XPATH = 'surname'
   def determine_surname(author_name_node)
     surname_node = author_name_node.at_xpath(SURNAME_XPATH)
-    surname_node.content
+    if surname_node
+      surname_node.content
+    else
+      fail 'name-style is not "given-only"' unless author_name_node.attributes['name-style'].value == 'given-only'
+      ''
+    end
   end
 
   GIVEN_NAMES_XPATH = 'given-names'
