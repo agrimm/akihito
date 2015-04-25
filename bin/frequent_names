@@ -2,4 +2,4 @@ $LOAD_PATH.unshift File.join(__dir__, '..', 'lib')
 
 require 'frequent_names_runner'
 
-FrequentNamesRunner.run if __FILE__ == $PROGRAM_NAME
+FrequentNamesRunner.run if File.identical?(__FILE__, $PROGRAM_NAME)
