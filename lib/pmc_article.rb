@@ -30,6 +30,10 @@ class PMCArticle
     iowa utah ontario massachusetts alabama
     croatia louisiana colorado michigan mississippi florida virginia arkansas jersey dakota
     rhode
+    algeria slovak uzbekistan slovakia cuba venezuela armenia estonia azerbaijan iraq brunei belarus belarusian oman
+    gaza côte d’ivoire kosovo moldova mauritius kazakhstan palestine botswana madagascar macedonian albania algérie bosnia
+    cyprus senegal latvia uruguay iceland nepal syria rwanda ethiopia macedonia philippines zimbabwe ecuador congo ghana
+    macau niger italia
   ))
   NON_JAPAN_WORDS_INCLUDE = NON_JAPAN_WORDS.method(:include?)
   def affiliation_non_japanese?
