@@ -5,7 +5,7 @@ class PMCArticleList
   attr_reader :pmc_articles
 
   def self.new_using_config
-    filenames = Dir.glob('../data_akihito/**/*.nxml')
+    filenames = Dir.glob('../data_akihito/pubmed_central/**/*.nxml')
     new(filenames)
   end
 
