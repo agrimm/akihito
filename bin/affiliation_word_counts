@@ -1,0 +1,5 @@
+$LOAD_PATH.unshift File.join(__dir__, '..', 'lib')
+
+require 'affiliation_word_count_query'
+
+AffiliationWordCountQuery.run if __FILE__ == $PROGRAM_NAME
